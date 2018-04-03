@@ -1,4 +1,5 @@
 --https://raw.githubusercontent.com/freddenis/oracle-scripts/master/asmdu.sh
+--https://www.pythian.com/blog/asmcmdgt-better-du-version-2/
 
 #!/bin/bash
 # Fred Denis -- Jun 2016 -- http://unknowndba.blogspot.com -- fred.denis3@gmail.com
