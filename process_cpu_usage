@@ -1,0 +1,2 @@
+
+/bin/ps -www -eo "pcpu pmem time vsz rss user pid args" | sort -n -k 1 -r | more
