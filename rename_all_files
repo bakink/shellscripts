@@ -1,0 +1,1 @@
+find /var/lib/mysql -type f -name "ib_logfile?" -exec mv {} {}_OLD \;
