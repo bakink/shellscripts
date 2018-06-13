@@ -1,0 +1,18 @@
+--https://www.dbarj.com.br/en/2018/06/protecting-oracle-database-binaries-against-malicious-changes/
+
+$ ORACLE_HOME=/u01/app/oracle/product/18.0.0/dbhome_1
+$ cd $ORACLE_HOME
+$ find -depth -printf '%m:%u:%g:%p\0' |
+awk -v RS='\0' -F: '
+BEGIN {
+    print "#!/bin/sh";
+    print "set -e";
+    q = "\047";
+}
+{
+    gsub(q, q q "\\" q);
+    f = $0;
+    sub(/^[^:]*:[^:]*:[^:]*:/, "", f);
+    print "chown --", q $2 ":" $3 q, q f q;
+    print "chmod", $1, q f q;
+}’ > original-permissions.sh
