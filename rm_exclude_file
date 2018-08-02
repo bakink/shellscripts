@@ -1,0 +1,25 @@
+
+https://superuser.com/questions/529854/how-to-delete-all-files-in-a-directory-except-some
+
+oracle@alzx4dbadm04|baki]$GLOBIGNORE=*lmhb*:*lmd*
+oracle@alzx4dbadm04|baki]$ls -rlt
+total 0
+-rw-r--r-- 1 oracle oinstall 0 Aug  2 10:34 KASCV1_lmhb_322753.trc
+-rw-r--r-- 1 oracle oinstall 0 Aug  2 10:34 KASCV1_lmhb_322753.trm
+-rw-r--r-- 1 oracle oinstall 0 Aug  2 10:34 KASCV1_lmhb_78039.trc
+-rw-r--r-- 1 oracle oinstall 0 Aug  2 10:34 KASCV1_lmhb_78039.trm
+-rw-r--r-- 1 oracle oinstall 0 Aug  2 11:02 KASCV1_lmd_322754.trc
+-rw-r--r-- 1 oracle oinstall 0 Aug  2 11:02 KASCV1_lmd_322753.trc
+-rw-r--r-- 1 oracle oinstall 0 Aug  2 11:05 a1
+-rw-r--r-- 1 oracle oinstall 0 Aug  2 11:05 a2
+-rw-r--r-- 1 oracle oinstall 0 Aug  2 11:05 a3
+oracle@alzx4dbadm04|baki]$rm -rf *
+oracle@alzx4dbadm04|baki]$ls -rlt
+total 0
+-rw-r--r-- 1 oracle oinstall 0 Aug  2 10:34 KASCV1_lmhb_322753.trc
+-rw-r--r-- 1 oracle oinstall 0 Aug  2 10:34 KASCV1_lmhb_322753.trm
+-rw-r--r-- 1 oracle oinstall 0 Aug  2 10:34 KASCV1_lmhb_78039.trc
+-rw-r--r-- 1 oracle oinstall 0 Aug  2 10:34 KASCV1_lmhb_78039.trm
+-rw-r--r-- 1 oracle oinstall 0 Aug  2 11:02 KASCV1_lmd_322754.trc
+-rw-r--r-- 1 oracle oinstall 0 Aug  2 11:02 KASCV1_lmd_322753.trc
+
