@@ -1,0 +1,2 @@
+
+find . -name "*.trc" -mtime +10 | xargs rm
