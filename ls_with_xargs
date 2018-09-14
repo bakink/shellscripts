@@ -1,0 +1,2 @@
+
+ls /ZFS/yedek/X3/OPUSDATA/arch/arch_D* | xargs printf "CATALOG ARCHIVELOG '%s';\n" >> /home/oracle/script/catalogarchive_new_2.sql 
