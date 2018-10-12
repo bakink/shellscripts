@@ -3,3 +3,6 @@ find . -maxdepth 1 -type f -name "*.dmp"
 
 --Linux find/search root partition ONLY
 find / -xdev -type f -size +100M -exec ls -la {} \; | sort -nk 5
+
+--search for huge files:
+find / -type f -size +800M -exec ls -lh {} \; | awk '{ print $NF ": " $5 }'
