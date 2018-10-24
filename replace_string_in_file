@@ -1,3 +1,4 @@
+dcli -g dbs_group -l root "cp /etc/hosts /tmp/hosts.backup"
 
 perl -i -pe 's/10.70.17.22/10.70.52.59/g' /etc/hosts
-perl -i -pe 's/10.70.17.29/10.70.52.61/g' /etc/hosts 
+perl -i -pe 's/10.70.17.29/10.70.52.61/g' /etc/hosts
