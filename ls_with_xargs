@@ -1,2 +1,4 @@
 
 ls /ZFS/yedek/X3/OPUSDATA/arch/arch_D* | xargs printf "CATALOG ARCHIVELOG '%s';\n" >> /home/oracle/script/catalogarchive_new_2.sql 
+
+ls /ZFS/yedek/X6/OPUSDATA/arch/.zfs/snapshot/OPUSDATA.daily-07.11.2018-18.24.02-kcwvslb1286/arch_D* | xargs printf "alter database register logfile '%s';\n" > /home/oracle/scripts/sil.baki.sql
