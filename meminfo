@@ -1,0 +1,4 @@
+
+--https://twitter.com/FranckPachot/status/1083023727460343808
+
+awk '/Hugepagesize:/{p=$2}/ 0 /{next}/ kB$/{v[sprintf("%9d GB %-s",int($2/1024/1024),$0)]=$0;next}{h[$0]=$2}END{for(k in v) print k;for (k in h) print sprintf("%9d GB %-s",p*h[k]/1024/1024,k)}' /proc/meminfo|sort -nr|grep --color=auto -E "^|.*(Huge.*_[TF]|Mem).*:|" #awk #meminfo
