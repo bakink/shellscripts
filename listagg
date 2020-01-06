@@ -1,0 +1,7 @@
+
+an easy way to LISTAGG(<stdin>,',') in #bash is to:
+
+  | paste -sd
+
+like when you want to strace all dbwr processes with:
+strace -p $(pgrep -f ora_dbw | paste -sd,)
