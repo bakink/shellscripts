@@ -48,6 +48,7 @@ ldap_pass="sifre"
 ldap_ou="OU=company,DC=company,DC=local"
 l_whenChanged=$(date +"%Y%m%d%H%M%S" -d "1 days ago")".0Z"
 ldap_filter="(&(&(objectclass=user)(&(&(userPrincipalName=AVS*)(whenChanged>=${l_whenChanged})))(UserAccountControl=514))(!(objectclass=computer)))"
+##ldap_filter="(&(&(&((objectClass=User))(objectCategory=person))(whenCreated>=20130720000000.0Z)))" 
 
 #================================================================
 # Find disabled users on AD daily
