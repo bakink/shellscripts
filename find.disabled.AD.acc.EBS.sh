@@ -47,8 +47,10 @@ ldap_user="CN=OIMUser,CN=Users,DC=company,DC=local"
 ldap_pass="sifre"
 ldap_ou="OU=company,DC=company,DC=local"
 l_whenChanged=$(date +"%Y%m%d%H%M%S" -d "1 days ago")".0Z"
-ldap_filter="(&(&(objectclass=user)(&(&(userPrincipalName=AVS*)(whenChanged>=${l_whenChanged})))(UserAccountControl=514))(!(objectclass=computer)))"
-##ldap_filter="(&(&(&((objectClass=User))(objectCategory=person))(whenCreated>=20130720000000.0Z)))" 
+ldap_filter="(&(&(objectclass=user)(&(&(userPrincipalName=AVS*)(whenChanged>=${l_whenChanged})))(UserAccountControl=514))(!(objectclass=computer)))"   #find disabled acccount
+##ldap_filter="(&(&(objectclass=user)(&(&(userPrincipalName=AVS*)(whenCreated>=${l_whenChanged})))(UserAccountControl=512))((objectCategory=person)))" #find created account
+##ldapsearch -h dc.example.com -p 389 -D "EXAMPLE\admin" -x -w "password" -b "DC=example,DC=com" -s sub "(&(objectCategory=person)(objectClass=user)(sAMAccountName=*)(memberOf=CN=Developers,OU=Role_Groups,OU=Groups,DC=example,DC=com))" mail \
+
 
 #================================================================
 # Find disabled users on AD daily
