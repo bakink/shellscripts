@@ -1,0 +1,24 @@
+success_logs=/u01/oracle/scripts/logs/tnscp.success_log
+failed_logs=/u01/oracle/scripts/logs/tnscp.fail_log
+
+function log_status
+{
+  status=$1
+  message=$2
+  if [ "$status" -ne 0 ]; then
+    echo "`date +\"%Y-%m-%d %H:%M:%S\"` [ERROR] $message [Status] $status : failed" | tee -a "${failed_logs}"
+  else
+    echo "`date +\"%Y-%m-%d %H:%M:%S\"` [INFO] $message [Status] $status : success" | tee -a "${success_logs}"
+  fi
+}
+
+cp $ORACLE_HOME/network/admin/tnsnames.ora $ORACLE_HOME/network/admin/tnsnames.ora.YKBP
+
+g_STATUS=$?
+log_status $g_STATUS "tns backup isi"
+
+cp $ORACLE_HOME/network/admin/tnsnames.ora.PROD $ORACLE_HOME/network/admin/tnsnames.ora
+
+g_STATUS=$?
+log_status $g_STATUS "CARDLIVE PROD tns yonlendirme isi"
+oracle@optacom1:~$ 
